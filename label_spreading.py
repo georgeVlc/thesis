@@ -97,7 +97,6 @@ class LabelSpreading(BaseLabelPropagation):
             self.alpha * torch.matmul(self.norm_adj_matrix, self.predictions)
             + (1 - self.alpha) * self.one_hot_labels
         )
-        #self.predictions[self.labeled_mask] = self.one_hot_labels[self.labeled_mask]
     
     def fit(self, labels, max_iter=1000, tol=1e-3, alpha=0.5, verbose=True):
         '''
